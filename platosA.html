@@ -25,8 +25,8 @@
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/table.css">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/table2.css">
 </head>
 <body>
     
@@ -61,8 +61,8 @@
                         <a href="#" class="dropdown-item">Paquetes</a>
                         <a href="#" class="dropdown-item">Servicios</a>
                         <a href="#" class="dropdown-item">Productos</a>
-                        <a href="platos.html" class="dropdown-item">Platos</a>
-                        <a href="ingredientes.html" class="dropdown-item">Ingredientes</a>
+                        <a href="#" class="dropdown-item">Platos</a>
+                        <a href="#" class="dropdown-item">Ingredientes</a>
                      </div>
                </div>
             </div>
@@ -71,13 +71,156 @@
    </nav>
 </div>
   
-<main id="siu">
-       <!-- Modal para crear categoria-->
-<div class="modal fade" id="crearServicioModal" tabindex="-1" role="dialog" aria-labelledby="crearServicioModalLabel" aria-hidden="true">
+<main>
+    <!-- listar -->
+    <div class="containerlistar" >
+      <h2 class="titulo" >Platos de comida</h2>
+
+      <div class="row">
+        
+        <div class="col-md-4">
+          <label for="buscador">Buscar:</label>
+          <input type="text" class="form-control" id="buscador" placeholder="Ingrese su búsqueda">
+        </div>
+        <div class="col-md-6">
+          <label>&nbsp;</label><br>
+        </div>
+      </div>
+      <a href="#" class="btnlistarcrear btn-danger btn-sm" data-toggle="modal" data-target="#crearServicioModal">Crear Plato</a>
+      
+      <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arroz chino</td>
+            <td>Para 200 personas</td>
+            <td>1.000.000</td>
+            <td>Activo</td>
+            
+            <td>
+                <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
+                    Editar
+                </button>
+                <button type="button" class="btnlistar btn-danger btn-sm">
+                    Eliminar
+                </button>
+                <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
+                    Activo
+                  </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Spagueti</td>
+            <td>Para 50 personas</td>
+            <td>800.000</td>
+            <td>Activo</td>
+            <td>
+              <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
+                Editar
+              </button>
+              <button type="button" class="btnlistar btn-danger btn-sm">
+                Eliminar
+              </button>
+              <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
+                Activo
+              </button>
+              <a href="#" class="btnlistarcrear btn-danger btn-sm" data-toggle="modal" data-target="#modalVer">Ver</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="platos.xlsx" download target="_blank"  class="btnlistarcrear btn-danger btn-sm">Descargar Excel</a>
+
+
+    <div class="containerlistar" >
+      <h2 class="titulo" style="margin-top: 10%;" >Ingredientes</h2>
+
+        <div class="col-md-4">
+          <label for="buscador">Buscar:</label>
+          <input type="text" class="form-control" id="buscador" placeholder="Ingrese su búsqueda">
+        </div>
+        <div class="col-md-6">
+          <label>&nbsp;</label><br>
+          <a href="#" class="btnlistarcrear btn-danger btn-sm" data-toggle="modal" data-target="#crearServicioModa">Agregar Ingrediente</a>
+        </div>
+      </div>
+      
+      <table class="table table-striped mt-4">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Coca-Cola</td>
+            <td>200ml</td>
+            <td>200.000</td>
+            <td>2</td>
+            <td>400.000</td>
+            <td>Activo</td>
+            
+            <td>
+                <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
+                    Editar
+                </button>
+                <button type="button" class="btnlistar btn-danger btn-sm">
+                    Eliminar
+                </button>
+                <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
+                    Activo
+                  </button>
+                  
+            </td>
+        </tr>
+        <tr>
+            <td>Papas</td>
+            <td>Fritas</td>
+            <td>300.000</td>
+            <td>3</td>
+            <td>900.000</td>
+            <td>Inactivo</td>
+            <td>
+              <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
+                Editar
+              </button>
+              <button type="button" class="btnlistar btn-danger btn-sm">
+                Eliminar
+              </button>
+              <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
+                Activo
+              </button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </main>
+
+  <div class="modal fade" id="crearServicioModal" tabindex="-1" role="dialog" aria-labelledby="crearServicioModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="crearServicioModalLabel">Crear Categoria</h5>
+          <h5 class="modal-title" id="crearServicioModalLabel">Crear Plato</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -89,9 +232,13 @@
             <input type="text" class="form-control" id="nombreServicio1"  required>
           </div>
           <div class="form-group">
-            <label for="precioUnitario">Descripción:</label>
-            <input type="text" class="form-control" id="precioUnitario" required>
-          </div>        
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion1" required>
+          </div>  
+          <div class="form-group">
+            <label for="precioUnitario">Precio:</label>
+            <input type="text" class="form-control" id="precioUnitario1" required>
+          </div>       
           <label for="precioUnitario">Estado:</label>
           <select name="estado" class="form-control">Estado
             <option value="activo">Activo</option>
@@ -117,7 +264,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editarServicioModalLabel">Editar categoria</h5>
+          <h5 class="modal-title" id="editarServicioModalLabel">Editar Plato</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -130,19 +277,19 @@
             
           </div>
           <div class="form-group">
-            <label for="precioUnitario">Descripción:</label>
-            <input type="text" class="form-control" id="precioUnitario" required>
-            
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion2" required>
+          </div>
+          <div class="form-group">
+            <label for="precioUnitario">Precio:</label>
+            <input type="text" class="form-control" id="precioUnitario2" required>
           </div>
           <label for="precioUnitario">Estado:</label>
           <select name="estado" class="form-control">Estado
             <option value="activo">Activo</option>
             <option value="inactivo">Inactivo</option>
           </select>
-          <div class="form-group mt-3">
-            <label for="foto">Agregar Foto:</label>
-            <input type="file" class="form-control" id="foto" accept="image/*">
-          </div>
+          
   
   
           <!-- Agrega más campos según tus necesidades -->
@@ -154,83 +301,37 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+  <div class="modal fade" id="crearServicioModal" tabindex="-1" role="dialog" aria-labelledby="crearServicioModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearServicioModalLabel">Crear Plato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--crear el servicio -->
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button id="btn1" type="button" class="btn btn-dark">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   
-  
-  
-  
-  
-  <h1 class="h1-productos">Categorias</h1>
-  <div>
-    
-  </div>
-  <div id="container-productoUno">
-    <a href="#" class="btnlistarcrear btn-danger btn-sm" data-toggle="modal" data-target="#crearServicioModal">Crear Categoría</a>
-    <div class="ProductoDos">
-      
-          <img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/05/decoracion-para-fiesta-de-cumpleanos-ostapandroksolanamykytiv.jpg" alt="" style="height: 52%;">
-          <strong><p>Cumpleaños</p></strong>
-          <div class="mb-5">
-            Descripción:
-          </div>
-          <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
-            Editar
-          </button>
-          
-          <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
-            Activo
-          </button>
-      </div>
-      <div class="ProductoDos">
-          <img src="https://cdn0.matrimonios.cl/article-vendor/5757/3_2/960/jpg/9_8_135757-1555368377.jpeg" alt="" style="height: 52%; width: 100%;">
-          <strong><p>Matrimonio</p></strong>
-          <div class="mb-5">
-            Descripción:
-          </div>
-          <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
-            Editar
-          </button>
-          
-          <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
-            Activo
-          </button>
-          
-        
-      </div>
-      <div class="ProductoDos">
-          <img src="https://www.lavariopinta.com/wp-content/uploads/2020/02/Baby-Shower-1024x750.jpg" alt="" style="height: 52%;  width: 100%;">
-          <strong><p>Baby Shower</p></strong>
-          <div class="mb-5">
-            Descripción:
-          </div>
-          <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
-            Editar
-          </button>
-          <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
-            Activo
-          </button>
-          
-      </div>
-      <div class="ProductoDos">
-          <img src="https://www.evento.love/blog/wp-content/uploads/2019/09/223-bautizo-comunion-organizacion-decoracion-evento.love-madrid-O4A5716.jpg" alt="" style="height: 52%;  width: 100%;">
-          <strong><p>Bautizo</p></strong>
-          <div class="mb-5">
-            Descripción:
-          </div>
-          <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
-            Editar
-          </button>
-          <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
-            Activo
-          </button>
-      </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
-</main>
 
 
 <footer class="footer-section">

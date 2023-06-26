@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('btn2').addEventListener('click', function() {
     var nombreServicio = document.getElementById('nombreServicio2').value;
+    var precioUnitario = document.getElementById('precioUnitario2').value
+    var descripcion = document.getElementById('descripcion2').value
     console.log('shi');
   
     if (nombreServicio === '') {
@@ -30,7 +32,26 @@ document.addEventListener("DOMContentLoaded", function() {
         icon: 'error',
         confirmButtonText: 'Aceptar'
       });
-    } else {
+      
+    }
+    else if (descripcion === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese la descripcion',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      
+    }else if (precioUnitario <= 0) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingreso un valor negativo',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    
+    
+    }else {
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -44,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
   document.getElementById('btn1').addEventListener('click', function() {
     var nombreServicio = document.getElementById('nombreServicio1').value;
-    console.log('shi');
+    var precioUnitario = document.getElementById('precioUnitario1').value
+    var descripcion = document.getElementById('descripcion1').value
   
     if (nombreServicio === '') {
       Swal.fire({
@@ -60,13 +82,33 @@ document.addEventListener("DOMContentLoaded", function() {
         icon: 'error',
         confirmButtonText: 'Aceptar'
       });
-    } else {
+      
+    }
+    else if (descripcion === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese la descripcion',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      
+    }else if (precioUnitario <= 0) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingreso un valor negativo',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    
+    
+    }else {
       Swal.fire({
         position: 'center',
         icon: 'success',
         title: 'Creacion exitosa',
         showConfirmButton: true,
       });
+    
       $('#editarServicioModal').modal('hide');
     }
   });

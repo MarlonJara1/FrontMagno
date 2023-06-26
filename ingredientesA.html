@@ -75,6 +75,13 @@
     <!-- listar -->
     <div class="containerlistar" >
       <h2 class="titulo" >Ingredientes</h2>
+
+      
+    
+        <div class="col-md-4">
+          <label for="buscador">Buscar:</label>
+          <input type="text" class="form-control" id="buscador" placeholder="Ingrese su búsqueda">
+        </div>
         <div class="col-md-6">
           <label>&nbsp;</label><br>
           <a href="#" class="btnlistarcrear btn-danger btn-sm" data-toggle="modal" data-target="#crearServicioModal">Crear Ingrediente</a>
@@ -87,6 +94,8 @@
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
@@ -96,6 +105,8 @@
             <td>Coca-Cola</td>
             <td>200ml</td>
             <td>200.000</td>
+            <td>2</td>
+            <td>400.000</td>
             <td>Activo</td>
             
             <td>
@@ -108,13 +119,16 @@
                 <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
                     Activo
                   </button>
+                  
             </td>
         </tr>
         <tr>
             <td>Papas</td>
             <td>Fritas</td>
-            <td>200.000</td>
-            <td>Activo</td>
+            <td>300.000</td>
+            <td>3</td>
+            <td>900.000</td>
+            <td>Inactivo</td>
             <td>
               <button type="button" class="btnlistar btn-danger btn-sm" data-toggle="modal" data-target="#editarServicioModal">
                 Editar
@@ -125,11 +139,16 @@
               <button id="toggleButton" type="button" class="btnlistar btn-danger btn-sm">
                 Activo
               </button>
+              
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+
+
+    <a href="platos.xlsx" download target="_blank"  class="btnlistarcrear btn-danger btn-sm">Descargar Excel</a>
+    
   </main>
 
   <div class="modal fade" id="crearServicioModal" tabindex="-1" role="dialog" aria-labelledby="crearServicioModalLabel" aria-hidden="true">
@@ -148,19 +167,25 @@
             <input type="text" class="form-control" id="nombreServicio1"  required>
           </div>
           <div class="form-group">
-            <label for="precioUnitario">Descripción:</label>
-            <input type="text" class="form-control" id="precioUnitario" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion1" required>
           </div>  
           <div class="form-group">
             <label for="precioUnitario">Precio:</label>
-            <input type="text" class="form-control" id="precioUnitario" required>
+            <input type="text" class="form-control" id="precioUnitario1" required>
           </div>       
           <label for="precioUnitario">Estado:</label>
           <select name="estado" class="form-control">Estado
             <option value="activo">Activo</option>
             <option value="inactivo">Inactivo</option>  
           </select>
+          <div class="form-group mt-3">
+            <label for="foto">Agregar Foto:</label>
+            <input type="file" class="form-control" id="foto" accept="image/*">
+          </div>
+  
         </div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button id="btn1" type="button" class="btn btn-dark">Guardar</button>
@@ -189,19 +214,23 @@
             
           </div>
           <div class="form-group">
-            <label for="precioUnitario">Descripción:</label>
-            <input type="text" class="form-control" id="precioU nitario" required>
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion2" required>
           </div>
           <div class="form-group">
             <label for="precioUnitario">Precio:</label>
-            <input type="text" class="form-control" id="precioUnitario" required>
+            <input type="text" class="form-control" id="precioUnitario2" required>
           </div>
           <label for="precioUnitario">Estado:</label>
           <select name="estado" class="form-control">Estado
             <option value="activo">Activo</option>
             <option value="inactivo">Inactivo</option>
           </select>
-          
+          <div class="form-group mt-3">
+            <label for="foto">Agregar Foto:</label>
+            <input type="file" class="form-control" id="foto" accept="image/*">
+          </div>
+
   
   
           <!-- Agrega más campos según tus necesidades -->
