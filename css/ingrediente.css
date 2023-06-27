@@ -45,11 +45,8 @@ main {
   }
   
   .btn {
-    position: absolute;
     top: -17px;
     right: 10px;
-    width: 34px;
-    height: 34px;
     border-radius:50%;
     padding: 0;
     background-color: #4f00aa;
