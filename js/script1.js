@@ -114,6 +114,84 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
+ document.getElementById('btnC1').addEventListener('click', function() {
+    var nombreServicio = document.getElementById('nombreServicio1').value;
+    var descripcion = document.getElementById('descripcion1').value
+  
+    if (nombreServicio === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese el nombre',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    } else if (!isNaN(nombreServicio)) {
+      Swal.fire({
+        title: 'Error',
+        text: 'El campo Nombre no puede ser un número',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      
+    }
+    else if (descripcion === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese la descripcion',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    }else {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Creacion exitosa',
+        showConfirmButton: true,
+      });
+    
+      $('#editarServicioModal').modal('hide');
+    }
+  });
+
+document.getElementById('btnC2').addEventListener('click', function() {
+    var nombreServicio = document.getElementById('nombreServicio2').value;
+    var descripcion = document.getElementById('descripcion2').value
+  
+    if (nombreServicio === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese el nombre',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    } else if (!isNaN(nombreServicio)) {
+      Swal.fire({
+        title: 'Error',
+        text: 'El campo Nombre no puede ser un número',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+      
+    }
+    else if (descripcion === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Ingrese la descripcion',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+      });
+    }else {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Edicion exitosa',
+        showConfirmButton: true,
+      });
+    
+      $('#editarServicioModal').modal('hide');
+    }
+  });
+
   document.addEventListener('DOMContentLoaded', function() {
     var toggleButtons = document.querySelectorAll('#toggleButton');
     toggleButtons.forEach(function(toggleButton) {
