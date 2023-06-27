@@ -12,185 +12,134 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
 
-  document.getElementById('btn2').addEventListener('click', function() {
-    var nombreServicio = document.getElementById('nombreServicio2').value;
-    var precioUnitario = document.getElementById('precioUnitario2').value
-    var descripcion = document.getElementById('descripcion2').value
-    console.log('shi');
+  if(document.getElementById('btn2')){
+    document.getElementById('btn2').addEventListener('click', function() {
+      var nombreServicio = document.getElementById('nombreServicio2').value;
+      if(document.getElementById('precioUnitario2')){
+        var precioUnitario = document.getElementById('precioUnitario2').value
+      }
+      var descripcion = document.getElementById('descripcion2').value
+    
+      if (nombreServicio === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese el nombre',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      } else if (!isNaN(nombreServicio)) {
+        Swal.fire({
+          title: 'Error',
+          text: 'El campo Nombre no puede ser un número',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        
+      }
+      else if (descripcion === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese la descripcion',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        
+      }else if (precioUnitario === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese el precio',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      
+      
+      }else if (precioUnitario <= 0) {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingreso un valor negativo',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      
+      
+      }else {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Creacion exitosa',
+          showConfirmButton: true,
+        });
+      
+        $('#editarServicioModal').modal('hide');
+      }
+    });
+  }
   
-    if (nombreServicio === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese el nombre',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    } else if (!isNaN(nombreServicio)) {
-      Swal.fire({
-        title: 'Error',
-        text: 'El campo Nombre no puede ser un número',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
+  if(document.getElementById('btn1')){
+    document.getElementById('btn1').addEventListener('click', function() {
+      var nombreServicio = document.getElementById('nombreServicio1').value;
+      if(document.getElementById('precioUnitario1')){
+        var precioUnitario = document.getElementById('precioUnitario1').value
+      }
+      var descripcion = document.getElementById('descripcion1').value
+    
+      if (nombreServicio === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese el nombre',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+      } else if (!isNaN(nombreServicio)) {
+        Swal.fire({
+          title: 'Error',
+          text: 'El campo Nombre no puede ser un número',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        
+      }
+      else if (descripcion === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese la descripcion',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
+        
+      }else if (precioUnitario === '') {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingrese el precio',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
       
-    }
-    else if (descripcion === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese la descripcion',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
       
-    }else if (precioUnitario <= 0) {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingreso un valor negativo',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    
-    
-    }else {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Edición exitosa',
-        showConfirmButton: true,
-      });
-    
-      $('#editarServicioModal').modal('hide');
-    }
-  });
-  
-  document.getElementById('btn1').addEventListener('click', function() {
-    var nombreServicio = document.getElementById('nombreServicio1').value;
-    var precioUnitario = document.getElementById('precioUnitario1').value
-    var descripcion = document.getElementById('descripcion1').value
-  
-    if (nombreServicio === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese el nombre',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    } else if (!isNaN(nombreServicio)) {
-      Swal.fire({
-        title: 'Error',
-        text: 'El campo Nombre no puede ser un número',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
+      }else if (precioUnitario <= 0) {
+        Swal.fire({
+          title: 'Error',
+          text: 'Ingreso un valor negativo',
+          icon: 'error',
+          confirmButtonText: 'Aceptar'
+        });
       
-    }
-    else if (descripcion === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese la descripcion',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
       
-    }else if (precioUnitario <= 0) {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingreso un valor negativo',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    
-    
-    }else {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Creacion exitosa',
-        showConfirmButton: true,
-      });
-    
-      $('#editarServicioModal').modal('hide');
-    }
-  });
+      }else {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Creacion exitosa',
+          showConfirmButton: true,
+        });
+      
+        $('#editarServicioModal').modal('hide');
+      }
+    });
+  }
 
 
- document.getElementById('btnC1').addEventListener('click', function() {
-    var nombreServicio = document.getElementById('nombreServicio1').value;
-    var descripcion = document.getElementById('descripcion1').value
-  
-    if (nombreServicio === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese el nombre',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    } else if (!isNaN(nombreServicio)) {
-      Swal.fire({
-        title: 'Error',
-        text: 'El campo Nombre no puede ser un número',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-      
-    }
-    else if (descripcion === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese la descripcion',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    }else {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Creacion exitosa',
-        showConfirmButton: true,
-      });
-    
-      $('#editarServicioModal').modal('hide');
-    }
-  });
 
-document.getElementById('btnC2').addEventListener('click', function() {
-    var nombreServicio = document.getElementById('nombreServicio2').value;
-    var descripcion = document.getElementById('descripcion2').value
-  
-    if (nombreServicio === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese el nombre',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    } else if (!isNaN(nombreServicio)) {
-      Swal.fire({
-        title: 'Error',
-        text: 'El campo Nombre no puede ser un número',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-      
-    }
-    else if (descripcion === '') {
-      Swal.fire({
-        title: 'Error',
-        text: 'Ingrese la descripcion',
-        icon: 'error',
-        confirmButtonText: 'Aceptar'
-      });
-    }else {
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Edicion exitosa',
-        showConfirmButton: true,
-      });
-    
-      $('#editarServicioModal').modal('hide');
-    }
-  });
 
   document.addEventListener('DOMContentLoaded', function() {
     var toggleButtons = document.querySelectorAll('#toggleButton');
